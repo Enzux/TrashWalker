@@ -17,10 +17,10 @@ const loop = setInterval(() => {
     const trashPosition = window.getComputedStyle(trash).bottom.replace('px', '');
    
     window.addEventListener('keypress', (event) => {
-        if (event.key === 'w') {
+        if (event.key === ' ') {
             event.preventDefault();
-            pulos++;
-            console.log('pulos');
+            pulos = pulos+1;
+            document.getElementById("count").innerHTML = pulos;
         }
     })
     
@@ -33,8 +33,8 @@ const loop = setInterval(() => {
         trash.style.left = `${trashPosition}px`
     
         trash.src = './sprite/Trash-die.png'
-        
-        
+        pulos = 0;     
+        document.getElementById("count").innerHTML = pulos; 
     }
 
 }, 10)
