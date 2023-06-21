@@ -1,6 +1,6 @@
 const trash = document.querySelector('.trash');
 const tree  = document.querySelector('.tree');
-var pulos = 0;
+var sec = 0;
 
 const jump = () => {
     trash.classList.add('jump');
@@ -15,12 +15,16 @@ const loop = setInterval(() => {
 
     const treePosition = tree.offsetLeft;
     const trashPosition = window.getComputedStyle(trash).bottom.replace('px', '');
-   
+
+function timer() {
+    sec++;
+};
+setInterval(timer, 1000);
+document.getElementById("count").innerHTML = sec;
+    
     window.addEventListener('keypress', (event) => {
         if (event.key === ' ') {
             event.preventDefault();
-            pulos = pulos+1;
-            document.getElementById("count").innerHTML = pulos;
         }
     })
     
@@ -33,8 +37,6 @@ const loop = setInterval(() => {
         trash.style.left = `${trashPosition}px`
     
         trash.src = './sprite/Trash-die.png'
-        pulos = 0;     
-        document.getElementById("count").innerHTML = pulos; 
     }
 
 }, 10)
