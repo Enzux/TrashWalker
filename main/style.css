@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+#objeto{
+    display: flex;
+    background-color: black;
+    position: absolute;
+}
+
+
+#objeto2{
+    position: absolute;
+    display: flex;
+    background-color: pink;
+    animation: tree-animation 2.4s infinite linear;
+}
+
