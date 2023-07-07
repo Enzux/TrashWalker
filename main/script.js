@@ -64,7 +64,7 @@ function main() {
 
    ///
 
-    marginRightObj2 = marginRightObj2 + 1;
+    marginRightObj2 = marginRightObj2 + 1.3;
     if(marginRightObj2 > 200){
         marginRightObj2 = 0;
     }    
@@ -101,8 +101,8 @@ var placar = setInterval(pont, 1000);
 
 
     window.addEventListener('keypress', (event) => {
-        if (event.key === ' ') {
-            var subir = setInterval(pulo_subir, 0.1);
+        if (event.key === ' ' && alturaObjPulo == 0) {
+            var subir = setInterval(pulo_subir, 1);
             contador = 0;
         }
         
@@ -117,10 +117,10 @@ var placar = setInterval(pont, 1000);
         
         function timer(){
             contador++;
-            if (contador == 2){
+            if (contador == 1){
                 clearInterval(tempo);
                 contador = 0;
-                descer = setInterval(pulo_descer, 0.1);
+                descer = setInterval(pulo_descer, 0.001);
             }
         }
         
