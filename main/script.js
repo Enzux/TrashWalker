@@ -31,14 +31,14 @@ var movimentoObj2 = marginLeftObj2 + (-marginRightObj2);
 var posicaoObjeto2 = movimentoObj2;
 
 var colisao = false;
+var pontos = 0;
 
 ///
 
 
+
 function main() {
 
-
-    
     ///
 
     movimentoObj = marginLeftObj + (-marginRightObj); 
@@ -57,6 +57,7 @@ function main() {
     }
     if (colisao == true){
         clearInterval(mainLoop); 
+        clearInterval(placar);
         
     }
 
@@ -81,41 +82,55 @@ function main() {
 
     $("#objeto2").css({"height" : alturaObj2Porcentagem, "width" : larguraObj2Porcentagem, "margin-left": marginLeftObj2Porcentagem, "margin-right": marginRightObj2Porcentagem});
 
+    ///
 
+   
 }
 
 var mainLoop = setInterval(main, 10);
+var placar = setInterval(pont, 1000);
+
+    function pont(){
+        pontos = pontos + 3;
+        document.getElementById("pontuacao").innerHTML = pontos;
+    }
 
     let contador = 0
     let tempo
+    let descer
 
-    function timer(){
-        contador++;
-        console.log(contador);
-        if (contador == 15){
-            clearInterval(timer);
-            contador = 0;
-            var descer = setInterval(alturaObjPulo--, 10);
-            if (alturaObjPulo = 0){     
-                clearInterval(descer);
-            }
-        }
-    }
 
     window.addEventListener('keypress', (event) => {
         if (event.key === ' ') {
-            console.log("pulo");
             var subir = setInterval(pulo_subir, 0.1);
+            contador = 0;
         }
-    function pulo_subir(){
-        if (alturaObjPulo == 70) {
-            clearInterval(subir);
-            tempo = setInterval(timer,100);
-       } else {
-           alturaObjPulo++;
-       }
-    }
-    
+        
+        function pulo_subir(){
+            if (alturaObjPulo == 100) {
+                clearInterval(subir);
+                tempo = setInterval(timer,100);
+            } else {
+                alturaObjPulo++;
+            }
+        }
+        
+        function timer(){
+            contador++;
+            if (contador == 2){
+                clearInterval(tempo);
+                contador = 0;
+                descer = setInterval(pulo_descer, 0.1);
+            }
+        }
+        
+        function pulo_descer(){
+            if (alturaObjPulo == 0) {
+                clearInterval(descer);
+            } else {
+                alturaObjPulo--;
+            }
+        }
     })
 
        
