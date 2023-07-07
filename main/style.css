@@ -11,6 +11,11 @@ body{
     justify-content: center;
 }
 
+#pontuacao{
+    align-self: self-start;
+}
+
+
 #objeto{
     display: flex;
     background-color: black;

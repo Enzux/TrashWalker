@@ -32,7 +32,7 @@ var posicaoObjeto2 = movimentoObj2;
 
 var colisao = false;
 var pontos = 0;
-
+var velocidadeObj2 = 1.3;
 ///
 
 
@@ -49,11 +49,8 @@ function main() {
 
     ///
 
-    if(posicaoObjeto >= posicaoObjeto2 && posicaoObjeto <= (posicaoObjeto2 + larguraObj2) && alturaObjPulo <= 10){
-        var colisao = true
-    }
-    if(posicaoObjeto2 >= posicaoObjeto && posicaoObjeto2 <= (posicaoObjeto + larguraObj) && alturaObjPulo <= 10){
-        var colisao = true
+    if(marginRightObj2 >= 158 && alturaObjPulo <= 5){
+        var colisao = true;
     }
     if (colisao == true){
         clearInterval(mainLoop); 
@@ -64,7 +61,7 @@ function main() {
 
    ///
 
-    marginRightObj2 = marginRightObj2 + 1.3;
+    marginRightObj2 = marginRightObj2 + velocidadeObj2;
     if(marginRightObj2 > 200){
         marginRightObj2 = 0;
     }    
@@ -84,6 +81,9 @@ function main() {
 
     ///
 
+    if(pontos >= 30){
+        velocidadeObj2 = 1.8;
+    }    
    
 }
 
@@ -102,7 +102,7 @@ var placar = setInterval(pont, 1000);
 
     window.addEventListener('keypress', (event) => {
         if (event.key === ' ' && alturaObjPulo == 0) {
-            var subir = setInterval(pulo_subir, 1);
+            var subir = setInterval(pulo_subir, 8 )
             contador = 0;
         }
         
@@ -111,7 +111,7 @@ var placar = setInterval(pont, 1000);
                 clearInterval(subir);
                 tempo = setInterval(timer,100);
             } else {
-                alturaObjPulo++;
+                alturaObjPulo = alturaObjPulo + 2;
             }
         }
         
@@ -120,7 +120,7 @@ var placar = setInterval(pont, 1000);
             if (contador == 1){
                 clearInterval(tempo);
                 contador = 0;
-                descer = setInterval(pulo_descer, 0.001);
+                descer = setInterval(pulo_descer, 1);
             }
         }
         
@@ -128,11 +128,8 @@ var placar = setInterval(pont, 1000);
             if (alturaObjPulo == 0) {
                 clearInterval(descer);
             } else {
-                alturaObjPulo--;
+                alturaObjPulo = alturaObjPulo - 2;
             }
         }
     })
 
-       
-    
-    
