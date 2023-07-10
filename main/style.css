@@ -18,7 +18,9 @@ body{
 
 #objeto{
     display: flex;
-    background-image: url("img/pulo.gif");
+    background-image: url("img/corrida.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
 }
 
@@ -26,7 +28,10 @@ body{
 #objeto2{
     position: absolute;
     display: flex;
-    background-color: pink;
-    animation: tree-animation 2.4s infinite linear;
+    background-image: url("img/caminhao.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    transfor
 }
 
