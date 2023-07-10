@@ -15,9 +15,9 @@ var marginLeftObj2Porcentagem = marginLeftObj2 + "vw";
 var marginRightObj2 = 0;
 var marginRightObj2Porcentagem = marginRightObj2 + "vw";
 
-var larguraObj2 = 13;
+var larguraObj2 = 16;
 var larguraObj2Porcentagem = larguraObj2 + "vw";
-var alturaObj2 = 10
+var alturaObj2 = 12;
 var alturaObj2Porcentagem = alturaObj2 + "vw";
 var alturaObjPulo = 0;
 
@@ -49,13 +49,14 @@ function main() {
 
     ///
     console.log(alturaObjPulo);
-    if(marginRightObj2 >= 153 && marginRightObj2 <= 180 && alturaObjPulo <= 103){
+    if(marginRightObj2 >= 145 && marginRightObj2 <= 175 && alturaObjPulo <= 125){
         var colisao = true;
     }
     if (colisao == true){
         clearInterval(mainLoop); 
         clearInterval(placar);
-        document.getElementById("objeto").style.backgroundImage = "url('img/morre.png')"
+        document.getElementById("objeto").style.backgroundImage = "url('img/morre.png')";
+        clearInterval(tempo);
     }
 
 
@@ -104,6 +105,7 @@ var placar = setInterval(pont, 1000);
         if (event.key === ' ' && alturaObjPulo == 0) {
             var subir = setInterval(pulo_subir, 6)
             contador = 0;
+            document.getElementById("objeto").style.backgroundImage = "url('img/pulo.gif')"
         }
         
         function pulo_subir(){
