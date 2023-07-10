@@ -49,7 +49,7 @@ function main() {
 
     ///
     console.log(alturaObjPulo);
-    if(marginRightObj2 >= 160 && marginRightObj2 <= 175 && alturaObjPulo <= 65){
+    if(marginRightObj2 >= 160 && marginRightObj2 <= 170 && alturaObjPulo <= 65){
         var colisao = true;
     }
     if (colisao == true){
