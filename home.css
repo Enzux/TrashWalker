@@ -4,10 +4,13 @@
     margin: 0;
     padding: 0;
 }
+body {
+    overflow: hidden;
+}
 main {
     width: 100%;
     height: 85vh;
-    background-image: url(sprite/sky.png);
+    background-color: hsl(195, 71%, 63%);
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
     display: flex;
@@ -17,19 +20,42 @@ main {
 }
 .title {
     font-size: clamp(0.5em, 4em, 5vw);
-    color: rgb(75, 31, 3);
+    color: black;
+}
+main a {
+    text-decoration: none;
 }
 .start{
     margin-top: 10%;
-    font-size: 1.5em;
     width: 20%;
     height: 15%;
     border-radius: 30px;
-    background-color: #3E8DF4;
+    border: 1px solid black;
+    background-image: url(img/button.jpg);
+    background-size: cover;
     font-family: 'Press Start 2P', cursive;
 }
+.start h2 {
+    font-size: 1.5em;
+    color: black;
+    padding: 11% 27%;
+}
 .start:hover{
-    background-color: darkblue;
+    opacity: 80%;
+}
+.img1 {
+    height: 120px;
+    position: relative;
+    bottom: 120%;
+    left: 10%;
+}
+.img2 {
+    height: 110px;
+    float: right;
+    position: relative;
+    bottom: 110%;
+    right: 10%;
+    transform: scaleX(-1);
 }
 footer {
     width: 100%;
