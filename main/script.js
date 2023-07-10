@@ -55,7 +55,7 @@ function main() {
     if (colisao == true){
         clearInterval(mainLoop); 
         clearInterval(placar);
-        
+        document.getElementById("objeto").style.backgroundImage = "url('img/morre.png')"
     }
 
 
@@ -102,7 +102,7 @@ var placar = setInterval(pont, 1000);
 
     window.addEventListener('keypress', (event) => {
         if (event.key === ' ' && alturaObjPulo == 0) {
-            var subir = setInterval(pulo_subir, 8 )
+            var subir = setInterval(pulo_subir, 6)
             contador = 0;
         }
         
@@ -120,7 +120,7 @@ var placar = setInterval(pont, 1000);
             if (contador == 1){
                 clearInterval(tempo);
                 contador = 0;
-                descer = setInterval(pulo_descer, 8);
+                descer = setInterval(pulo_descer, 6);
             }
         }
         
