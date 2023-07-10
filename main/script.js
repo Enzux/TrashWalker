@@ -3,9 +3,9 @@ var marginLeftObjPorcentagem = marginLeftObj + "vw";
 var marginRightObj = 80;
 var marginRightObjPorcentagem = marginRightObj + "vw";
 
-var larguraObj = 5;
+var larguraObj = 10;
 var larguraObjPorcentagem = larguraObj + "vw";
-var alturaObj = 5;
+var alturaObj = 10;
 var alturaObjPorcentagem = alturaObj + "vw";
 
 ///
@@ -15,9 +15,9 @@ var marginLeftObj2Porcentagem = marginLeftObj2 + "vw";
 var marginRightObj2 = 0;
 var marginRightObj2Porcentagem = marginRightObj2 + "vw";
 
-var larguraObj2 = 5;
+var larguraObj2 = 13;
 var larguraObj2Porcentagem = larguraObj2 + "vw";
-var alturaObj2 = 5;
+var alturaObj2 = 10
 var alturaObj2Porcentagem = alturaObj2 + "vw";
 var alturaObjPulo = 0;
 
@@ -49,7 +49,7 @@ function main() {
 
     ///
     console.log(alturaObjPulo);
-    if(marginRightObj2 >= 160 && marginRightObj2 <= 170 && alturaObjPulo <= 65){
+    if(marginRightObj2 >= 153 && marginRightObj2 <= 180 && alturaObjPulo <= 103){
         var colisao = true;
     }
     if (colisao == true){
@@ -82,7 +82,7 @@ function main() {
     ///
 
     if(pontos >= 30){
-        velocidadeObj2 = 2;
+        velocidadeObj2 = 1;
     }    
    
 }
@@ -107,7 +107,7 @@ var placar = setInterval(pont, 1000);
         }
         
         function pulo_subir(){
-            if (alturaObjPulo == 100) {
+            if (alturaObjPulo == 200) {
                 clearInterval(subir);
                 tempo = setInterval(timer,100);
             } else {
