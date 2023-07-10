@@ -30,8 +30,8 @@ main a {
     width: 20%;
     height: 15%;
     border-radius: 30px;
-    border: 1px solid black;
-    background-color: blue;
+    border: 2px solid black;
+    background-color: #0F52BA;
     font-family: 'Press Start 2P', cursive;
 }
 .start h2 {
@@ -54,7 +54,6 @@ main a {
     position: relative;
     bottom: 110%;
     right: 10%;
-    transform: scaleX(-1);
 }
 footer {
     width: 100%;
