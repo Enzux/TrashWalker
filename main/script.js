@@ -49,7 +49,7 @@ function main() {
 
     ///
     console.log(alturaObjPulo);
-    if(marginRightObj2 >= 145 && marginRightObj2 <= 175 && alturaObjPulo <= 125){
+    if(marginRightObj2 >= 150 && marginRightObj2 <= 175 && alturaObjPulo <= 125){
         var colisao = true;
     }
     if (colisao == true){
@@ -59,12 +59,17 @@ function main() {
         clearInterval(tempo);
     }
 
+    ///
+
+    if(alturaObjPulo == 0){
+        document.getElementById("objeto").style.backgroundImage = "url('img/corrida.gif')"
+    }
 
    ///
 
     marginRightObj2 = marginRightObj2 + velocidadeObj2;
     if(marginRightObj2 > 200){
-        marginRightObj2 = 0;
+        marginRightObj2 = 3;
     }    
     marginRightObj2Porcentagem = marginRightObj2 + "vw";
 
@@ -133,5 +138,7 @@ var placar = setInterval(pont, 1000);
                 alturaObjPulo = alturaObjPulo - 2;
             }
         }
+    
+    
     })
 

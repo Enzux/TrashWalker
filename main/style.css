@@ -9,7 +9,7 @@ body{
     display: flex;
     align-items: end;
     justify-content: center;
-    background-image: url("");
+    background-image: url("img/ceuu.png");
 }
 
 #pontuacao{
@@ -25,7 +25,6 @@ body{
     position: absolute;
 }
 
-
 #objeto2{
     position: absolute;
     display: flex;
@@ -33,4 +32,11 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: left;
+}
+
+.chao{
+    height: 10vh;
+    width: 105vw;
+    background-color: green;
+    margin-left: -5em;
 }
