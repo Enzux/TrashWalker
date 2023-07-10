@@ -32,7 +32,7 @@ var posicaoObjeto2 = movimentoObj2;
 
 var colisao = false;
 var pontos = 0;
-var velocidadeObj2 = 1.3;
+var velocidadeObj2 = 1;
 ///
 
 
@@ -48,8 +48,8 @@ function main() {
     posicaoObjeto2 = movimentoObj2;
 
     ///
-
-    if(marginRightObj2 >= 158 && alturaObjPulo <= 5){
+    console.log(alturaObjPulo);
+    if(marginRightObj2 >= 160 && marginRightObj2 <= 175 && alturaObjPulo <= 65){
         var colisao = true;
     }
     if (colisao == true){
@@ -82,7 +82,7 @@ function main() {
     ///
 
     if(pontos >= 30){
-        velocidadeObj2 = 1.8;
+        velocidadeObj2 = 2;
     }    
    
 }
@@ -120,7 +120,7 @@ var placar = setInterval(pont, 1000);
             if (contador == 1){
                 clearInterval(tempo);
                 contador = 0;
-                descer = setInterval(pulo_descer, 1);
+                descer = setInterval(pulo_descer, 8);
             }
         }
         
