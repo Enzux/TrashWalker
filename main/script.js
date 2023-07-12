@@ -31,7 +31,7 @@ var movimentoObj2 = marginLeftObj2 + (-marginRightObj2);
 var posicaoObjeto2 = movimentoObj2;
 
 var colisao = false;
-var pontos = 0;
+var pontos = 44;
 var velocidadeObj2 = 1;
 ///
 
@@ -68,7 +68,7 @@ function main() {
 
     marginRightObj2 = marginRightObj2 + velocidadeObj2;
     if(marginRightObj2 > 200){
-        marginRightObj2 = 5;
+        marginRightObj2 = 6;
     }    
     marginRightObj2Porcentagem = marginRightObj2 + "vw";
 
@@ -86,10 +86,26 @@ function main() {
 
     ///
 
-    if(pontos >= 30){
-        velocidadeObj2 = 1;
+    if(pontos > 50){
+        document.getElementById("corpo").style.backgroundImage = "url('img/Noite.png')";
+        document.getElementById("pontuacao").style.color = "white";
+        document.getElementById("sol").style.backgroundImage = "url('img/Lua.png')";
     }    
-   
+    if(pontos > 100){
+        document.getElementById("corpo").style.backgroundImage = "url('img/ceuu.png')";
+        document.getElementById("pontuacao").style.color = "black";
+        document.getElementById("sol").style.backgroundImage = "url('img/Sol.png')";
+    }
+    if(pontos > 200){
+        document.getElementById("corpo").style.backgroundImage = "url('img/Noite.png')";
+        document.getElementById("pontuacao").style.color = "white";
+        document.getElementById("sol").style.backgroundImage = "url('img/Lua.png')";
+    }  
+    if(pontos > 300){
+        document.getElementById("corpo").style.backgroundImage = "url('img/ceuu.png')";
+        document.getElementById("pontuacao").style.color = "black";
+        document.getElementById("sol").style.backgroundImage = "url('img/Sol.png')";
+    }    
 }
 
 var mainLoop = setInterval(main, 10);
@@ -109,7 +125,7 @@ var placar = setInterval(pont, 1000);
 
     window.addEventListener('keypress', (event) => {
         if (event.key === ' ' && alturaObjPulo == 0) {
-            var subir = setInterval(pulo_subir, 6)
+            var subir = setInterval(pulo_subir, 5)
             contador = 0;
         }
         
@@ -128,7 +144,7 @@ var placar = setInterval(pont, 1000);
             if (contador == 1){
                 clearInterval(tempo);
                 contador = 0;
-                descer = setInterval(pulo_descer, 6);
+                descer = setInterval(pulo_descer, 5);
             }
         }
         
