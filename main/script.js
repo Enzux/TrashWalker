@@ -57,19 +57,18 @@ function main() {
         clearInterval(placar);
         document.getElementById("objeto").style.backgroundImage = "url('img/morre.png')";
         clearInterval(tempo);
+        sprite_pulo = "url('img/morre.png')";
+        sprite_corre = "url('img/morre.png')";
     }
-
-    ///
-
+     
     if(alturaObjPulo == 0){
-        document.getElementById("objeto").style.backgroundImage = "url('img/corrida.gif')"
+        document.getElementById("objeto").style.backgroundImage = sprite_corre;
     }
-
    ///
 
     marginRightObj2 = marginRightObj2 + velocidadeObj2;
     if(marginRightObj2 > 200){
-        marginRightObj2 = 3;
+        marginRightObj2 = 5;
     }    
     marginRightObj2Porcentagem = marginRightObj2 + "vw";
 
@@ -104,13 +103,14 @@ var placar = setInterval(pont, 1000);
     let contador = 0
     let tempo
     let descer
+    var sprite_pulo = "url('img/pulo.gif')";
+    var sprite_corre = "url('img/corrida.gif')";
 
 
     window.addEventListener('keypress', (event) => {
         if (event.key === ' ' && alturaObjPulo == 0) {
             var subir = setInterval(pulo_subir, 6)
             contador = 0;
-            document.getElementById("objeto").style.backgroundImage = "url('img/pulo.gif')"
         }
         
         function pulo_subir(){
@@ -119,6 +119,7 @@ var placar = setInterval(pont, 1000);
                 tempo = setInterval(timer,100);
             } else {
                 alturaObjPulo = alturaObjPulo + 2;
+                document.getElementById("objeto").style.backgroundImage = sprite_pulo;
             }
         }
         
