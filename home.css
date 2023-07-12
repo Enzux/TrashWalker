@@ -32,12 +32,14 @@ main a {
     border-radius: 30px;
     border: 2px solid black;
     background-color: #0F52BA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Press Start 2P', cursive;
 }
 .start h2 {
     font-size: 1.5em;
     color: black;
-    padding: 11% 31%;
 }
 .start:hover{
     opacity: 80%;
